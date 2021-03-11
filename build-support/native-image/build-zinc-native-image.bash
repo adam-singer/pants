@@ -90,7 +90,8 @@ function build_native_image_tool {
 
 function fetch_scala_compiler_jars {
   # TODO: the scala version used to build the pants zinc wrapper must also be changed if this is!
-  version='2.12.8'
+  #version='2.12.8'
+  version='2.13.0'
   "$(get_coursier)" fetch \
                     org.scala-lang:scala-{compiler,library,reflect}:"$version"
 }
@@ -103,8 +104,8 @@ function fetch_pants_zinc_wrapper_jars {
   # protobuf artifact. We should fix this by making the change to the org.pantsbuild:zinc-compiler
   # artifact!
   "$(get_coursier)" fetch \
-                    "org.pantsbuild:zinc-compiler_2.12:${pants_zinc_compiler_version}" \
-                    "org.scala-sbt:compiler-bridge_2.12:${pants_underlying_zinc_dependency_version}" \
+                    "org.pantsbuild:zinc-compiler_2.13:${pants_zinc_compiler_version}" \
+                    "org.scala-sbt:compiler-bridge_2.13:${pants_underlying_zinc_dependency_version}" \
                     --exclude com.google.protobuf:protobuf-java \
                     com.google.protobuf:protobuf-java:2.5.0
 }

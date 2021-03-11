@@ -653,7 +653,7 @@ class GlobalOptionsRegistrar(SubsystemClientMixin, Optionable):
             "--binaries-baseurls",
             type=list,
             advanced=True,
-            default=["https://binaries.pantsbuild.org"],
+            default=["http://binaries.pantsbuild.org"],
             help="List of URLs from which binary tools are downloaded. URLs are "
             "searched in order until the requested path is found.",
         )

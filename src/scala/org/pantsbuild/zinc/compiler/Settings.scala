@@ -346,7 +346,7 @@ object Settings {
     opt[File]("scala-compiler")
       .abbr("scala-compiler")
       .valueName("<file>")
-      .action((x, c) => c.copy(scala = c.scala.copy(compiler = Some(x))))
+      .action((x, c) => { println("scala-compiler = " + x); c.copy(scala = c.scala.copy(compiler = Some(x))) })
       .text("Specify Scala compiler jar directly")
 
     opt[File]("scala-library")
